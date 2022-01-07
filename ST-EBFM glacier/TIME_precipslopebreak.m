@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% precip slope break: By Rickard Petterson (modified to fit in EBFM)%
+%% precip slope break: By Rickard Petterson (modified by Yoram Terleth to fit in EBFM)%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % utilises winstral et al.'s sheltering index to recalculate snow on the
 % ground 
@@ -69,7 +69,7 @@ function [IN] = TIME_precipslopebreak(IN,WD,grid,time,C)
     
     % Add the rescaled spatial precipitation variability
     % forming an accumulation factor
-    Af = Sx + Ps + (Sx10m.*1.5);
+    Af = Sx + Ps + (Sx10m);
     
     % Negative accumulation factor means erosion, 
     % so set it to zero
