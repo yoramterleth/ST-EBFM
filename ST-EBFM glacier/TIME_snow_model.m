@@ -50,16 +50,9 @@ prop_avalanches = IN.D ./ (SDc + IN.D + IN.snow) ;
 prop_avalanches(isnan(prop_avalanches))= 0 ; 
 OUT.Dnewsnow = (prop_avalanches .* C.Davalanche) + ((1-prop_avalanches).* OUT.Dfreshsnow) ; 
 
-%%%%%%%% inserted to prevent everlasting loop...
-% OUT.subD(OUT.subD(:)>1000) = C.Dice; 
-% OUT.subD(OUT.subD(:)<10) = C.Dfreshsnow ; 
-% OUT.subT(OUT.subT<=0) = 0.1 ; 
-% OUT.subZ(OUT.subZ>4) = 4 ; 
-% OUT.subZ(OUT.subZ<0) = 0 ; 
-% OUT.subW(OUT.subW>1000) = 1000 ; 
-% OUT.Tsurf(OUT.Tsurf<0) = 0.1 ; 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
 stability ; 
+%%%%%%%%%%%%%%%%%%
 
 while any(shift_tot>0)
     
